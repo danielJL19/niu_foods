@@ -29,6 +29,11 @@ env $(cat .env|xargs) rails db:migrate
 env $(cat .env|xargs) rails s 
 ```
 
+## Rake para actualizar estado de restaurantes
+```bash 
+env $(cat .env|xargs) bundle exec restaurants_control:update_restaurant_status_based_on_device_status
+```
+
 ## Diagrama de Conexión (alto nivel)
 
 <img width="1163" height="631" alt="imagen" src="https://github.com/user-attachments/assets/c7ac330a-dada-4b7a-a4e9-920ada2a9eea" />
