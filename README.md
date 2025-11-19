@@ -6,7 +6,7 @@ Proyecto de cadena de restaurantes y actualización de estado de los dispositivo
 
 1. Debes clonar el repositorio
 ```bash
-git clone https://github.com/danielJL19/crazy4cats.git
+git clone https://github.com/danielJL19/niu_foods.git
 ```
 
 ## Instalación
