@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   # root "posts#index"
   namespace :api do
     namespace :v1 do
-      resources :restaurants, except: [:destroy]
+      resources :restaurants, except: [:destroy] do
+        resources :restaurant_devices
+      end
       resources :devices, except: [:destroy]
       
     end

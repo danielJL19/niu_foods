@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  restaurant_device: one
+  restaurant: one
+  description: MyText
+  status: 1
+
+two:
+  restaurant_device: two
+  restaurant: two
+  description: MyText
+  status: 1
