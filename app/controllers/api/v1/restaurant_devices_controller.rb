@@ -3,7 +3,9 @@ class Api::V1::RestaurantDevicesController < ApplicationController
   def index
     @restaurant = Restaurant.find(params[:restaurant_id])
     @restaurant_devices = @restaurant.restaurant_devices
-    render json: @restaurant_devices, status: :ok
+    render json: @restaurant_devices.as_json(include: {
+      device: { only: [:name, :device_types] }
+    }), status: :ok
   end
 
   def create

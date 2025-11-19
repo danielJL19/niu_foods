@@ -6,8 +6,10 @@ def get_restaurant_devices(restaurant_id)
 
   response = Net::HTTP.get_response(uri)
   body = response.body.force_encoding('UTF-8')
+  if response.code.to_i != 200
+    new raise "Error al obtener dispositivos para el restaurante #{restaurant_id}: #{response.code} - #{body}"
+  end
   devices = JSON.parse(body)
-  puts "response = #{response}"
   device_ids = devices.map { |device| device["id"] }
   device_ids
   rescue StandardError => e
@@ -46,7 +48,12 @@ end
     request.body = {status: status, description: description}.to_json
     
     response = http.request(request)
-    puts "Response: #{response.code} - #{response.body}"
+    if response.code.to_i != 200
+      puts "Error al actualizar el dispositivo #{id} del restaurante #{restaurant_id}: #{response.code}"
+      next
+    elsif response.code.to_i == 200
+      puts "Dispositivo #{id} del restaurante #{restaurant_id} actualizado correctamente a estado #{status}."
+    end
   end
-  sleep 5
+  sleep 3
 end
