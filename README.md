@@ -32,4 +32,8 @@ rails server s ó rails s
 
 <img width="1163" height="631" alt="imagen" src="https://github.com/user-attachments/assets/c7ac330a-dada-4b7a-a4e9-920ada2a9eea" />
 
+## Diseño de base de datos 
+<img width="1264" height="865" alt="imagen" src="https://github.com/user-attachments/assets/bb39c557-ec92-4ac7-9760-2b8ea4306fc5" />
+
+
 
