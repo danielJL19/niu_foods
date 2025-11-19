@@ -10,7 +10,11 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :restaurants, except: [:destroy] do
-        resources :restaurant_devices
+        resources :restaurant_devices do 
+          member do
+            patch :update_status
+          end
+        end
       end
       resources :devices, except: [:destroy]
       
