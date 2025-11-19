@@ -23,9 +23,10 @@ rails db:create
 ```bash 
 rails db:migrate
 ```
-4. Levantar servidor local
+4. Hacer una copia del archivo .env.example a .env para las variables de entorno en la raiz del proyecto
+5. Levantar servidor local en conjunto a las variables de entorno
 ```bash 
-rails server s ó rails s 
+env $(cat .env|xargs) rails s 
 ```
 
 ## Diagrama de Conexión (alto nivel)
