@@ -26,7 +26,7 @@ restaurant_device_ids.each do |restaurant_id|
   restaurant_devices[restaurant_id] = get_restaurant_devices(restaurant_id)
 end
 
-1.times do
+5.times do
   restaurant_device_ids.each do |restaurant_id|
     status = rand(0..2)
 
