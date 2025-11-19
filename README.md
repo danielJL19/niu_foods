@@ -1,24 +1,8 @@
-# README
+# Niu foods
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Proyecto de cadena de restaurantes y actualización de estado de los dispositivos 
 
-Things you may want to cover:
+## Diagrama de Conexión (alto nivel)
 
-* Ruby version
+<img width="1163" height="631" alt="imagen" src="https://github.com/user-attachments/assets/c7ac330a-dada-4b7a-a4e9-920ada2a9eea" />
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
