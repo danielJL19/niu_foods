@@ -17,11 +17,11 @@ bundle install
 ```
 2. Creación de base de datos 
 ```bash 
-rails db:create
+env $(cat .env|xargs) rails db:create
 ```
 3. Ejecución de migraciones del proyecto 
 ```bash 
-rails db:migrate
+env $(cat .env|xargs) rails db:migrate
 ```
 4. Hacer una copia del archivo .env.example a .env para las variables de entorno en la raiz del proyecto
 5. Levantar servidor local en conjunto a las variables de entorno
