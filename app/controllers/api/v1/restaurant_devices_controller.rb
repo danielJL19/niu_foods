@@ -21,6 +21,7 @@ class Api::V1::RestaurantDevicesController < ApplicationController
   def update_status
     @restaurant = Restaurant.find(params[:restaurant_id])
     @restaurant_device = @restaurant.restaurant_devices.find_by(id: params[:id])
+
     if @restaurant_device.update(restaurant_device_params)
       
       RestaurantDeviceHistory.create(
