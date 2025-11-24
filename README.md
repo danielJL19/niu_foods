@@ -15,12 +15,13 @@ git clone https://github.com/danielJL19/niu_foods.git
 ```bash
 bundle install
 ```
-1.1. Hacer una copia del archivo .env.example a .env para las variables de entorno y luego agregarle los valores a DATABASE_USERNAME Y DATABASE_PASSWORD
-2. Creación de base de datos 
+2. Hacer una copia del archivo .env.example a .env para las variables de entorno y luego agregarle los valores a DATABASE_USERNAME Y DATABASE_PASSWORD
+   
+4. Creación de base de datos 
 ```bash 
 env $(cat .env|xargs) rails db:create
 ```
-3. Ejecución de migraciones del proyecto 
+4. Ejecución de migraciones del proyecto 
 ```bash 
 env $(cat .env|xargs) rails db:migrate
 ```
