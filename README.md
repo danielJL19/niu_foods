@@ -16,8 +16,15 @@ git clone https://github.com/danielJL19/niu_foods.git
 bundle install
 ```
 2. Hacer una copia del archivo .env.example a .env para las variables de entorno y luego agregarle los valores a DATABASE_USERNAME Y DATABASE_PASSWORD
-   
-4. Creación de base de datos 
+```bash 
+cp .env.example .env
+```
+3. Debes crear un usuario y password con postgres, le adjunto el comando
+```bash 
+CREATE ROLE niu_foods LOGIN PASSWORD 'abc.123';
+ALTER USER username CREATEDB;
+```
+5. Creación de base de datos 
 ```bash 
 env $(cat .env|xargs) rails db:create
 ```
