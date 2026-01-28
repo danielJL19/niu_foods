@@ -52,4 +52,17 @@ EL SCRIPT ENVIA PETICIONES DE ACTUALIZACIÓN DE LOS DISPOSITIVOS DEL RESTAURANTE
 ## Diseño de base de datos 
 <img width="1264" height="865" alt="imagen" src="https://github.com/user-attachments/assets/bb39c557-ec92-4ac7-9760-2b8ea4306fc5" />
 
+## Pruebas con curl
+```bash
+Creación de restaurante
+curl -X POST -H "Content-Type: application/json" \ -d '{"name": "restaurante 1", "address": "dirección 1", "status": 0}' \ http://localhost:3000/api/v1/restaurants
+Creación de dispositivo
+curl -X POST -H "Content-Type: application/json" \ -d '{"name": "pos 1", "device_type": 0}' \ http://localhost:3000/api/v1/devices
+Creación de dispositivo para el restaurante
+curl -X POST -H "Content-Type: application/json" \ -d '{"restaurant_id": 1, "device_id": 1, "status": 0, "description": "example"}' \ http://localhost:3000/api/v1/restaurants/1/restaurant_devices
+Actualizar estado de dispositivo de restaurante
+curl -X PATCH -H "Content-Type: application/json" \
+  -d '{"status": 2, "description": "fue cambiado"}' \
+  http://localhost:3000/api/v1/restaurants/1/restaurant_devices/1/update_status
+```
 
