@@ -63,7 +63,9 @@ curl -X POST -H "Content-Type: application/json" \
   -d '{"name": "pos 1", "device_type": 0}' \
   http://localhost:3000/api/v1/devices
 Creación de dispositivo para el restaurante
-curl -X POST -H "Content-Type: application/json" \ -d '{"restaurant_id": 1, "device_id": 1, "status": 0, "description": "example"}' \ http://localhost:3000/api/v1/restaurants/1/restaurant_devices
+curl -X POST -H "Content-Type: application/json" \
+  -d '{"restaurant_id": 1, "device_id": 1, "status": 0, "description": "example"}' \
+  http://localhost:3000/api/v1/restaurants/1/restaurant_devices
 Actualizar estado de dispositivo de restaurante
 curl -X PATCH -H "Content-Type: application/json" \
   -d '{"status": 2, "description": "fue cambiado"}' \
