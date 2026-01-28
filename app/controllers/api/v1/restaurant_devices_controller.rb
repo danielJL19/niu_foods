@@ -1,10 +1,9 @@
 class Api::V1::RestaurantDevicesController < ApplicationController
-
   def index
     @restaurant = Restaurant.find(params[:restaurant_id])
     @restaurant_devices = @restaurant.restaurant_devices
     render json: @restaurant_devices.as_json(include: {
-      device: { only: [:name, :device_types] }
+      device: { only: [ :name, :device_types ] }
     }), status: :ok
   end
 
@@ -23,7 +22,7 @@ class Api::V1::RestaurantDevicesController < ApplicationController
     @restaurant_device = @restaurant.restaurant_devices.find_by(id: params[:id])
 
     if @restaurant_device.update(restaurant_device_params)
-      
+
       RestaurantDeviceHistory.create(
         restaurant_device_id: @restaurant_device.id,
         restaurant_id: @restaurant.id,
@@ -36,9 +35,9 @@ class Api::V1::RestaurantDevicesController < ApplicationController
     end
   end
 
-  private 
+  private
 
   def restaurant_device_params
-    params.require(:restaurant_device).permit(:status, :description)
+    params.require(:restaurant_device).permit(:status, :description, :device_id)
   end
 end
